@@ -21,7 +21,10 @@ setup(
     entry_points={
         'console_scripts': [
                            'yolo = clibot_pkg.yolo:main',
-                           'cam_sub = clibot_pkg.usbcam_publisher:main'
+                           'cam_sub = clibot_pkg.webcam:main',
+                           'control = clibot_pkg.controller:main',
+                           'database = clibot_pkg.fire_db:main'
+                            
         ],
     },
 )
