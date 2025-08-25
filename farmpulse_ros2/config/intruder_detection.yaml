@@ -1,0 +1,24 @@
+farmpulse_node:
+  ros__parameters:
+    # Camera Configuration
+    camera_source: "/dev/video0"  # Can be /dev/video0, /dev/video1, or RTSP URL like "rtsp://user:pass@ip:port/stream"
+    
+    # Detection Parameters
+    detection_confidence: 0.5      # Minimum confidence for person detection (0.0-1.0)
+    alert_threshold: 0.7          # Minimum confidence to trigger an alert
+    model_size: "yolov8n.pt"      # Options: yolov8n.pt (nano), yolov8s.pt (small), yolov8m.pt (medium)
+    
+    # Alert Configuration
+    cooldown_period: 30.0         # Seconds between alerts to prevent spam
+    save_detections: true         # Save images when intruders are detected
+    detection_folder: "/home/ubuntu/farmpulse_detections"
+    
+    # Region of Interest (ROI) - Define area to monitor
+    roi_enabled: false            # Enable/disable ROI
+    roi_points: []               # List of x,y coordinates forming polygon
+    # Example ROI for rectangular area:
+    # roi_points: [100, 100, 500, 100, 500, 400, 100, 400]
+    
+    # Advanced Settings
+    false_positive_reduction: true
+    min_detection_size: 50        # Minimum detection size in pixels
